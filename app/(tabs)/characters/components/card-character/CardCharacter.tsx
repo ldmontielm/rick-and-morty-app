@@ -8,7 +8,6 @@ interface Props{
 
 
 export default function CardCharacter({ character }:Props) {
-    console.log("image -> ", character.image)
   return (
     <div key={character.id} className='p-2 rounded-lg bg-[#2D2D2D]'>
         <div className='rounded-md h-52 bg-cover bg-center relative' style={{backgroundImage: `url(${character.image})`}}></div>

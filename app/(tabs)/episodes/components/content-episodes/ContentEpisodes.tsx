@@ -2,13 +2,13 @@
 
 import React from 'react'
 import { useEpisodes } from '../../hooks/use-episodes'
-import { Loader } from 'lucide-react'
 import { CardEpisode } from '../card-episode'
 import { Episode } from '../../models'
 import BlurFade from '@/components/ui/blur-fade'
 import { Paginator } from '@/components/system/paginator'
 import { useSearchParams } from 'next/navigation'
 import { LoaderContent } from '@/components/system/loader-content'
+import { ErrorContent } from '@/components/system/error-content'
 
 export default function ContentEpisodes() {
     const params = useSearchParams()
@@ -16,9 +16,7 @@ export default function ContentEpisodes() {
 
     if(isError){
         return (
-            <div className="w-full p-4 flex flex-col items-center gap-2">
-                <p className="text-semibold text-xs">{error.message}</p>
-            </div>
+            <ErrorContent content={error.message} />
         )
     }
 

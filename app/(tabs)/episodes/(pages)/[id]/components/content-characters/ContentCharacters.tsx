@@ -2,10 +2,11 @@
 
 import React from 'react'
 import { useCharactersByEpisode } from '@/app/(tabs)/characters/hooks/use-characters-by-episode'
-import { Loader } from 'lucide-react'
 import BlurFade from '@/components/ui/blur-fade'
 import { CardCharacter } from '@/app/(tabs)/characters/components/card-character'
 import { Character } from '@/app/(tabs)/characters/models'
+import { LoaderContent } from '@/components/system/loader-content'
+import { ErrorContent } from '@/components/system/error-content'
 
 interface Props{
   characters: string[]
@@ -13,22 +14,17 @@ interface Props{
 
 export default function ContentCharacters({ characters }:Props) {
   const { data, isLoading, isError, error } = useCharactersByEpisode(characters)
-  
+
   if(isError){
     return (
-        <div className="w-full p-4 flex flex-col items-center gap-2">
-            <p className="text-semibold text-xs">{error.message}</p>
-        </div>
+      <ErrorContent content={error.message} />
     )
   }
 
   if(isLoading){
-      return (
-          <div className="w-full p-4 flex flex-col items-center gap-2 text-white">
-              <Loader size={18} className="animate-spin" />
-              <p className="text-semibold text-xs">Loading Episode</p>
-          </div>
-      )
+    return (
+      <LoaderContent content='Loading Characters' />
+    )
   }
   
   return (

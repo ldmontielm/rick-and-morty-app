@@ -9,6 +9,8 @@ import {
 import { ContentEpisodes } from '@/app/(tabs)/characters/(pages)/[id]/components/content-episodes'
 import Link from 'next/link'
 import { Loader } from 'lucide-react'
+import { ErrorContent } from '@/components/system/error-content'
+import { LoaderContent } from '@/components/system/loader-content'
 
 interface Props{
     id: string
@@ -22,18 +24,13 @@ export default function ContentCharacter({ id }:Props) {
  
     if(isError){
         return (
-            <div className="w-full p-4 flex flex-col items-center gap-2">
-                <p className="text-semibold text-xs">{error.message}</p>
-            </div>
+            <ErrorContent content={error.message} />
         )
     }
 
     if(isLoading){
         return (
-            <div className="w-full p-4 flex flex-col items-center gap-2 text-white">
-                <Loader size={18} className="animate-spin" />
-                <p className="text-semibold text-xs">Loading Characters</p>
-            </div>
+            <LoaderContent content='Loading Character' />
         )
     }
 

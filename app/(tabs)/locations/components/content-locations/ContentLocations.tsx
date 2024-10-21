@@ -2,12 +2,12 @@
 import React from 'react'
 import { useLocations } from '../../hooks/use-locations'
 import { CardLocation } from '../card-location'
-import { Loader } from 'lucide-react'
 import { Location } from '../../models'
 import { Paginator } from '@/components/system/paginator'
 import { useSearchParams } from 'next/navigation'
 import BlurFade from '@/components/ui/blur-fade'
 import { LoaderContent } from '@/components/system/loader-content'
+import { ErrorContent } from '@/components/system/error-content'
 
 export default function ContentLocations() {
     const params = useSearchParams()
@@ -15,9 +15,7 @@ export default function ContentLocations() {
 
     if(isError){
         return (
-            <div className="w-full p-4 flex flex-col items-center gap-2">
-                <p className="text-semibold text-xs">{error.message}</p>
-            </div>
+            <ErrorContent content={error.message} />
         )
     }
 

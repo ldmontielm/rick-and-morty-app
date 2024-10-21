@@ -3,6 +3,8 @@
 import { Loader } from "lucide-react"
 import { useEpisodesByCharacters } from "@/app/(tabs)/episodes/hooks/use-episodes-by-characters"
 import { CardEpisode } from "@/app/(tabs)/episodes/components/card-episode"
+import { ErrorContent } from "@/components/system/error-content"
+import { LoaderContent } from "@/components/system/loader-content"
 
 interface Props{
     episodes: string[]
@@ -13,18 +15,13 @@ export default function ContentEpisodes({ episodes }:Props) {
     
     if(isError){
         return (
-            <div className="w-full p-4 flex flex-col items-center gap-2">
-                <p className="text-semibold text-xs">{error.message}</p>
-            </div>
+            <ErrorContent content={error.message} />
         )
     }
 
     if(isLoading){
         return (
-            <div className="w-full p-4 flex flex-col items-center gap-2 text-white">
-                <Loader size={18} className="animate-spin" />
-                <p className="text-semibold text-xs">Loading Episodes</p>
-            </div>
+            <LoaderContent content='Loading Episodes' />
         )
     }
 

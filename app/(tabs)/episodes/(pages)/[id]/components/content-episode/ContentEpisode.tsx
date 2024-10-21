@@ -1,8 +1,9 @@
 "use client"
 import React from 'react'
 import { useEpisodeById } from '@/app/(tabs)/episodes/hooks/use-episode-by-id'
-import { Loader } from 'lucide-react'
 import { ContentCharacters } from '../content-characters'
+import { ErrorContent } from '@/components/system/error-content'
+import { LoaderContent } from '@/components/system/loader-content'
 
 interface Props{
     id: string
@@ -12,21 +13,15 @@ export default function ContentEpisode({ id }:Props) {
 
     if(isError){
         return (
-            <div className="w-full p-4 flex flex-col items-center gap-2">
-                <p className="text-semibold text-xs">{error.message}</p>
-            </div>
+            <ErrorContent content={error.message} />
         )
     }
 
     if(isLoading){
         return (
-            <div className="w-full p-4 flex flex-col items-center gap-2 text-white">
-                <Loader size={18} className="animate-spin" />
-                <p className="text-semibold text-xs">Loading Episode</p>
-            </div>
+            <LoaderContent content='Loading Episode' />
         )
     }
-
     return (
         <div className='w-full'>
             <div className='flex flex-col gap-2'>
