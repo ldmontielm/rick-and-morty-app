@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rick and Morty App
 
-## Getting Started
+Este proyecto es una aplicación web que permite explorar personajes, ubicaciones y episodios del universo de Rick and Morty, desarrollado para demostrar la integración de Next.js 14.2.15, React, TypeScript, TanStack Query, Shadcn UI y Tailwind CSS en un proyecto moderno. Esta es la primera versión del proyecto y en el futuro se le estarán agregando nuevas funcionalidades.
 
-First, run the development server:
+## 🚀 Tecnologías Utilizadas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Next.js (v14.2.15)**: Utilizado como el framework principal para el proyecto, aprovechando su arquitectura de páginas y rutas dinámicas, junto con las funcionalidades de server-side rendering (SSR) y static site generation (SSG).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **React**: Utilizado como la biblioteca de interfaces de usuario, creando componentes reutilizables y gestionando el estado local de manera eficiente.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **TypeScript**: Proporciona tipado estático a lo largo del código, mejorando la mantenibilidad y reduciendo errores durante el desarrollo.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **TanStack Query**: Implementado para manejar la gestión de datos asíncronos y la caché de manera eficiente, facilitando las solicitudes API y el manejo de estados de carga, error y éxito.
 
-## Learn More
+- **Axios**: Usado como cliente HTTP para realizar solicitudes a la API de Rick and Morty, aprovechando su simplicidad y características avanzadas como interceptores y cancelación de solicitudes.
 
-To learn more about Next.js, take a look at the following resources:
+- **Shadcn UI**: Utilizado para construir componentes de interfaz de usuario elegantes y accesibles, proporcionando un conjunto de componentes preconstruidos que se integran perfectamente con Tailwind CSS.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Tailwind CSS**: Utilizado como framework de CSS para estilos utilitarios, permitiendo un diseño rápido y responsivo con clases de utilidad que facilitan la personalización del diseño.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ✨ Características del Proyecto
+- **Exploración de personajes, ubicaciones y episodios**: Permite a los usuarios navegar y visualizar información detallada sobre personajes, sus ubicaciones y episodios favoritos de Rick and Morty.
 
-## Deploy on Vercel
+- **Gestión eficiente de datos con TanStack Query**: Las solicitudes a la API de Rick and Morty se gestionan con TanStack Query, lo que permite:
+    - Caché automática de los datos para mejorar el rendimiento.
+    - Manejo optimizado de estados de carga y error.
+    - Revalidación de datos para asegurar la frescura de la información mostrada.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Optimización de rendimiento con Next.js**: Uso de SSR y SSG para mejorar los tiempos de carga y la optimización para motores de búsqueda (SEO).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Interfaz de usuario interactiva y responsiva**: Construida con componentes modulares de React y Shadcn UI, junto con Tailwind CSS para ofrecer una experiencia de usuario fluida y amigable en dispositivos móviles y de escritorio.
+
+## 📦 Instalación
+
+1. Clona el repo:
+    ```bash
+    git clone https://github.com/ldmontielm/rick-and-morty-app.git
+    ```
+2. Navega al directorio del proyecto:
+    ```bash
+    cd rick-and-morty-app
+    ```
+3. Instala las dependencias:
+    ```bash
+    pnpm install
+    ```
+4. Inicia el servidor de desarrollo:
+    ```bash
+    pnpm dev
+    ```
+
+
+## 🤝 Contribuciones
+Si deseas contribuir a este proyecto, siéntete libre de crear un fork, realizar los cambios y enviar un pull request. ¡Toda mejora es bienvenida!
